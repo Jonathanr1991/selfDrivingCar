@@ -1,33 +1,38 @@
-import cv2
+import socket
 import sys
+import cv2
+import pickle
+import numpy as np
+import struct ## new
 
-cascPath = "haarcascade_eye.xml"
-faceCascade = cv2.CascadeClassifier(cascPath)
+HOST=''
+PORT=8089
 
-video_capture = cv2.VideoCapture(0)
+s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+print 'Socket created'
 
+s.bind((HOST,PORT))
+print 'Socket bind complete'
+s.listen(10)
+print 'Socket now listening'
+
+conn,addr=s.accept()
+
+### new
+data = ""
+payload_size = struct.calcsize("H")
 while True:
-    # Capture frame-by-frame
-    ret, frame = video_capture.read()
-    
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    
-    faces = faceCascade.detectMultiScale(
-                                         gray,
-                                         scaleFactor=1.1,
-                                         minNeighbors=5,
-                                         minSize=(30, 30),
-                                         flags=cv2.cv.CV_HAAR_SCALE_IMAGE
-                                         )
-    # Draw a rectangle around the faces
-    for (x, y, w, h) in faces: cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+    while len(data) < payload_size:
+        data += conn.recv(4096)
+    packed_msg_size = data[:payload_size]
+    data = data[payload_size:]
+    msg_size = struct.unpack("H", packed_msg_size)[0]
+    while len(data) < msg_size:
+        data += conn.recv(4096)
+    frame_data = data[:msg_size]
+    data = data[msg_size:]
+    ###
 
-# Display the resulting frame
-cv2.imshow('Video', frame)
-
-if cv2.waitKey(1) & 0xFF == ord('q'):
-    sys.exit()
-
-# When everything is done, release the capture
-video_capture.release()
-cv2.destroyAllWindows()
+frame=pickle.loads(frame_data)
+print frame
+    cv2.imshow('frame',frame)

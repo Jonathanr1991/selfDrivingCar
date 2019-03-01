@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 
 face_cascade = cv2.CascadeClassifier('stop_sign.xml')
-video_capture = cv2.VideoCapture(0)
+video_capture = cv2.VideoCapture(1)
 
 while(1):
     ret,img = video_capture.read()
