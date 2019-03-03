@@ -1,44 +1,22 @@
-import socket
-import sys
 import cv2
-import pickle
+import zmq
+import base64
 import numpy as np
-import struct ## new
 
-HOST=''
-PORT=8089
+context = zmq.Context()
+footage_socket = context.socket(zmq.SUB)
+footage_socket.bind('tcp://*:5555')
+footage_socket.setsockopt_string(zmq.SUBSCRIBE, np.unicode(''))
 
-s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-print 'Socket created'
-
-s.bind((HOST,PORT))
-print 'Socket bind complete'
-s.listen(10)
-print 'Socket now listening'
-
-conn,addr=s.accept()
-
-### new
-data = ""
-payload_size = struct.calcsize("L")
 while True:
-    while len(data) < payload_size:
-        data += conn.recv(4096)
-    packed_msg_size = data[:payload_size]
-    data = data[payload_size:]
-    msg_size = struct.unpack("L", packed_msg_size)[0]
-    while len(data) < msg_size:
-        data += conn.recv(4096)
-    frame_data = data[:msg_size]
-    data = data[msg_size:]
-    ###
+    try:
+        frame = footage_socket.recv_string()
+        img = base64.b64decode(frame)
+        npimg = np.fromstring(img, dtype=np.uint8)
+        source = cv2.imdecode(npimg, 1)
+        cv2.imshow("Stream", source)
+        cv2.waitKey(1)
 
-    frame=pickle.loads(frame_data)
-    print frame
-    cv2.imshow('frame',frame)
-    
-    key = cv2.waitKey(10)
-    if (key == 27) or (key == 113):
+    except KeyboardInterrupt:
+        cv2.destroyAllWindows()
         break
-
-cv2.destroyAllWindows()
