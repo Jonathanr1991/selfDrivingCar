@@ -25,16 +25,13 @@ print "turn left"
 GPIO.output(Motor1F,GPIO.HIGH)
 GPIO.output(Motor1B,GPIO.LOW)
 GPIO.output(Motor1E,GPIO.HIGH)
-
-sleep(2)
-
+sleep(1)
 print "turn right"
 
 GPIO.output(Motor1F,GPIO.LOW)
 GPIO.output(Motor1B,GPIO.HIGH)
 GPIO.output(Motor1E,GPIO.HIGH)
 
-sleep(2)
 
 print "turn foward"
 
@@ -43,7 +40,6 @@ GPIO.output(Motor2F,GPIO.HIGH)
 GPIO.output(Motor2B,GPIO.LOW)
 GPIO.output(Motor2E,GPIO.HIGH)
 
-sleep(2)
 
 print "turn backward"
 
@@ -51,7 +47,6 @@ GPIO.output(Motor2F,GPIO.LOW)
 GPIO.output(Motor2B,GPIO.HIGH)
 GPIO.output(Motor2E,GPIO.HIGH)
 
-sleep(2)
 print "stop"
 
 GPIO.output(Motor1E, GPIO.LOW)

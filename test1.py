@@ -1,11 +1,15 @@
 import numpy as np
 import cv2
+from picamera.array import PiRGBArray
+from picamera import PiCamera
 
 face_cascade = cv2.CascadeClassifier('stop_sign.xml')
-video_capture = cv2.VideoCapture(0)
+camera = PiCamera()
+rawCapture = PiRGBArray(camera)
+ 
 
 while(1):
-    ret,img = video_capture.read()
+    ret,img = camera.capture(rawCapture, format="bgr")
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     faces = face_cascade.detectMultiScale(gray, 1.3, 5)
