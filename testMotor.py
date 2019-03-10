@@ -48,7 +48,7 @@ print "turn backward"
 GPIO.output(Motor2F,GPIO.LOW)
 GPIO.output(Motor2B,GPIO.HIGH)
 GPIO.output(Motor2E,GPIO.HIGH)
-sleep(2)
+sleep(3)
 print "stop"
 
 
