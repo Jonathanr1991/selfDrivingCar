@@ -35,7 +35,7 @@ GPIO.output(Motor1E,GPIO.HIGH)
 sleep(2)
 GPIO.output(Motor1E, GPIO.LOW)
 
-print "turn foward"
+print "move foward"
 
 
 GPIO.output(Motor2F,GPIO.HIGH)
@@ -43,7 +43,7 @@ GPIO.output(Motor2B,GPIO.LOW)
 GPIO.output(Motor2E,GPIO.HIGH)
 sleep(2)
 
-print "turn backward"
+print "move backward"
 
 GPIO.output(Motor2F,GPIO.LOW)
 GPIO.output(Motor2B,GPIO.HIGH)
