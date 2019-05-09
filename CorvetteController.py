@@ -29,23 +29,23 @@ class CorvetteController():
         GPIO.output(self.Motor2E,GPIO.HIGH)
 
     def reverse(self):
-        GPIO.output(Motor2F,GPIO.LOW)
-        GPIO.output(Motor2B,GPIO.HIGH)
-        GPIO.output(Motor2E,GPIO.HIGH)
+        GPIO.output(self.Motor2F,GPIO.LOW)
+        GPIO.output(self.Motor2B,GPIO.HIGH)
+        GPIO.output(self.Motor2E,GPIO.HIGH)
 
     def right(self):
-        GPIO.output(Motor1F,GPIO.LOW)
-        GPIO.output(Motor1B,GPIO.HIGH)
-        GPIO.output(Motor1E,GPIO.HIGH)
+        GPIO.output(self.Motor1F,GPIO.LOW)
+        GPIO.output(self.Motor1B,GPIO.HIGH)
+        GPIO.output(self.Motor1E,GPIO.HIGH)
 
     def left(self):
-        GPIO.output(Motor1F,GPIO.HIGH)
-        GPIO.output(Motor1B,GPIO.LOW)
-        GPIO.output(Motor1E,GPIO.HIGH)
+        GPIO.output(self.Motor1F,GPIO.HIGH)
+        GPIO.output(self.Motor1B,GPIO.LOW)
+        GPIO.output(self.Motor1E,GPIO.HIGH)
 
     def release(self):
-        GPIO.output(Motor1E, GPIO.LOW)
-        GPIO.output(Motor2E, GPIO.LOW)
+        GPIO.output(self.Motor1E, GPIO.LOW)
+        GPIO.output(self.Motor2E, GPIO.LOW)
 
 
 car = CorvetteController()
