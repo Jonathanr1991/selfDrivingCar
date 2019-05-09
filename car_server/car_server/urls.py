@@ -19,7 +19,7 @@ from django.conf.urls import url
 from car import views
 
 urlpatterns = [
-    path('', views.Controller.home_view, name='home')
+    path('', views.Controller.home_view, name='home'),
     path('admin/', admin.site.urls),
     url(r'^foward$', views.Controller.go_foward, name='go_foward'),
     url(r'^back$', views.Controller.go_back, name='go_back'),
