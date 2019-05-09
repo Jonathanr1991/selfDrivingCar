@@ -6,7 +6,7 @@ from  django.http import HttpResponse
 
 
 class Controller():
-    #car = CorvetteController()
+    car = CorvetteController()
 
     def home_view(request, *args, **kwargs):
         return render(request,'dashboard.html', {})
