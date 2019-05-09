@@ -2,6 +2,8 @@ import RPi.GPIO as GPIO
 from time import sleep
 
 class CorvetteController():
+    
+    GPIO.setmode(GPIO.BOARD)
 ##right left dc motor pins
     Motor1F = 16
     Motor1B = 18
