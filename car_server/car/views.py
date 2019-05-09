@@ -11,31 +11,35 @@ class Controller():
     def home_view(request, *args, **kwargs):
         return render(request,'dashboard.html', {})
 
-    def go_foward(request, self):
+    def go_foward(request):
+        car = Corvette.CorvetteController()
         direction = request.POST.get('foward')
         print(direction)
         if direction=='foward':
-            self.car.foward(self)
+            car.foward()
         return render(request, 'dashboard.html',{})
 
-    def go_back(request, self):
+    def go_back(request):
+        car = Corvette.CorvetteController()
         direction = request.POST.get('back')
         print(direction)
         if direction=="back":
-            self.car.reverse(self)
+            car.reverse()
         return render(request, 'dashboard.html',{})
         
-    def go_right(request, self):
+    def go_right(request):
+        car = Corvette.CorvetteController()
         direction = request.POST.get('right')
         print(direction)
         if direction=="right":
-            self.car.right(self)
+            car.right()
         return render(request, 'dashboard.html',{})
     
-    def go_left(request, self):
+    def go_left(request):
+        car = Corvette.CorvetteController()
         direction = request.POST.get('left')
         print(direction)
         if direction=="left":
-            self.car.foward(self)
+            car.foward()
         return render(request, 'dashboard.html',{})
 
