@@ -10,7 +10,7 @@ class CorvetteController():
     Motor1E = 22
 
 ##foward right dc motor pins
-    Motor2F =19
+    Motor2F = 19
     Motor2B = 21
     Motor2E = 23
     
@@ -24,9 +24,9 @@ class CorvetteController():
     GPIO.setup(Motor2E,GPIO.OUT)
 
     def forward(self):
-        GPIO.output(Motor2F,GPIO.HIGH)
-        GPIO.output(Motor2B,GPIO.LOW)
-        GPIO.output(Motor2E,GPIO.HIGH)
+        GPIO.output(self.Motor2F,GPIO.HIGH)
+        GPIO.output(self.Motor2B,GPIO.LOW)
+        GPIO.output(self.Motor2E,GPIO.HIGH)
 
     def reverse(self):
         GPIO.output(Motor2F,GPIO.LOW)
