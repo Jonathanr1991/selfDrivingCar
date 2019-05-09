@@ -19,21 +19,21 @@ class Controller():
         return render(request, 'dashboard.html',{})
 
     def go_back(request):
-        direction = request.POST.get('Back')
+        direction = request.POST.get('back')
         print(direction)
        # if direction=="Back":
         #    car.reverse()
         return render(request, 'dashboard.html',{})
         
     def go_right(request):
-        direction = request.POST.get('Right')
+        direction = request.POST.get('right')
         print(direction)
       #  if direction=="Right":
        #     car.right()
         return render(request, 'dashboard.html',{})
     
     def go_left(request):
-        direction = request.POST.get('Left')
+        direction = request.POST.get('left')
         print(direction)
         #if direction=="Left":
           #  car.foward()
