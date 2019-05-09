@@ -4,19 +4,19 @@
 
     </head>
     <body>
-        <form method="POST">
+        <form method="POST" action="/go_foward/">
             {%csrf_token %}
             <button name="foward" value="foward" type="submit">Foward</button>
         </form>
-        <form method="POST">
+        <form method="POST" action="/go_right/">
                 {%csrf_token %}
             <button name="Right" value="Right" type="submit">Right</button>
         </form>
-        <form method="POST">
+        <form method="POST" action="/go_left/">
                 {%csrf_token %}
             <button name="Left" value="Left" type="submit">Left</button>
         </form>
-        <form method="POST">
+        <form method="POST" action="/go_back/">
                 {%csrf_token %}
             <button name="Back" value="Back" type="submit">Back</button>
         </form>
