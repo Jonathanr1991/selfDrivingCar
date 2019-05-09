@@ -13,30 +13,30 @@ class CorvetteController():
     Motor2E = 23
 
 
-    def forward():
+    def forward(self):
         GPIO.output(Motor2F,GPIO.HIGH)
         GPIO.output(Motor2B,GPIO.LOW)
         GPIO.output(Motor2E,GPIO.HIGH)
 
-    def reverse():
+    def reverse(self):
         GPIO.output(Motor2F,GPIO.LOW)
         GPIO.output(Motor2B,GPIO.HIGH)
         GPIO.output(Motor2E,GPIO.HIGH)
 
-    def right():
+    def right(self):
         GPIO.output(Motor1F,GPIO.LOW)
         GPIO.output(Motor1B,GPIO.HIGH)
         GPIO.output(Motor1E,GPIO.HIGH)
 
-    def left():
+    def left(self):
         GPIO.output(Motor1F,GPIO.HIGH)
         GPIO.output(Motor1B,GPIO.LOW)
         GPIO.output(Motor1E,GPIO.HIGH)
 
-    def release():
+    def release(self):
         GPIO.output(Motor1E, GPIO.LOW)
         GPIO.output(Motor2E, GPIO.LOW)
 
 
-
-forward()
+car = CorvetteController()
+car.forward()
