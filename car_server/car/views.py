@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect
-from car import CorvetteController
+from car import Corvette
 from django.views.generic import TemplateView
 from  django.http import HttpResponse
 
 
 
 class Controller():
-    car = CorvetteController()
+    car = Corvette.CorvetteController()
 
     def home_view(request, *args, **kwargs):
         return render(request,'dashboard.html', {})
