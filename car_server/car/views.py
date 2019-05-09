@@ -16,7 +16,7 @@ class Controller():
         direction = request.POST.get('foward')
         print(direction)
         if direction=='foward':
-            car.foward()
+            car.forward()
         return render(request, 'dashboard.html',{})
 
     def go_back(request):
