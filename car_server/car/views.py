@@ -6,7 +6,7 @@ from  django.http import HttpResponse
 
 
 class Controller():
-    car = Corvette.CorvetteController()
+   
 
     def home_view(request, *args, **kwargs):
         return render(request,'dashboard.html', {})
@@ -40,6 +40,6 @@ class Controller():
         direction = request.POST.get('left')
         print(direction)
         if direction=="left":
-            car.foward()
+            car.left()
         return render(request, 'dashboard.html',{})
 
