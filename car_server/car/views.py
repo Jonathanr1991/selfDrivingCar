@@ -1,9 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from car import CorvetteController
+from django.views.generic import TemplateView
+from  django.http import HttpResponse
+
 
 
 class Controller():
     car = CorvetteController()
+
+    def home_view(request, *args, **kwargs):
+        return render(request,'car/dashboard.html', {})
 
     def go_foward(request):
         direction = request.POST.get('foward')
@@ -32,3 +38,4 @@ class Controller():
         if direction=="Left":
             car.foward()
         return render(request, 'dashboard.html',{})
+
