@@ -13,7 +13,15 @@ class CorvetteController():
     Motor2F =19
     Motor2B = 21
     Motor2E = 23
+    
+    #GPIO pin setup
+    GPIO.setup(Motor1F,GPIO.OUT)
+    GPIO.setup(Motor1B,GPIO.OUT)
+    GPIO.setup(Motor1E,GPIO.OUT)
 
+    GPIO.setup(Motor2F,GPIO.OUT)
+    GPIO.setup(Motor2B,GPIO.OUT)
+    GPIO.setup(Motor2E,GPIO.OUT)
 
     def forward(self):
         GPIO.output(Motor2F,GPIO.HIGH)
