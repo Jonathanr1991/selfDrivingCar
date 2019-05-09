@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form method="POST">
+            {%csrf_token %}
+            <button name="foward" value="foward" type="submit">Foward</button>
+        </form>
+        <form method="POST">
+                {%csrf_token %}
+            <button name="Right" value="Right" type="submit">Right</button>
+        </form>
+        <form method="POST">
+                {%csrf_token %}
+            <button name="Left" value="Left" type="submit">Left</button>
+        </form>
+        <form method="POST">
+                {%csrf_token %}
+            <button name="Back" value="Back" type="submit">Back</button>
+        </form>
+    </body>
+</html>
