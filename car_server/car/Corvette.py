@@ -49,5 +49,3 @@ class CorvetteController():
         GPIO.output(self.Motor2E, GPIO.LOW)
 
 
-car = CorvetteController()
-car.forward()
