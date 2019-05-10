@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
-impor
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     #'keyboard_shortcuts',
 
     # Added.
-    #'keyboard_shortcuts',
+    'keyboard_shortcuts',
 ]
 
 MIDDLEWARE = [
