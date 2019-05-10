@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'car',
     'car_server',
+    'keyboard_shortcuts',
 ]
 
 MIDDLEWARE = [
