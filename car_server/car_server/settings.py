@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     #'keyboard_shortcuts',
 
     # Added.
-    'keyboard_shortcuts',
+    #'keyboard_shortcuts',
 ]
 
 MIDDLEWARE = [
