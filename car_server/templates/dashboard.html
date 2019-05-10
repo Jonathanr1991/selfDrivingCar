@@ -1,3 +1,4 @@
+{ % load staic %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,5 +21,7 @@
                 {%csrf_token %}
             <button name="back" value="back" type="submit">Back</button>
         </form>
+
+        <img src="{% static 'forward_left.jpeg' %}">
     </body>
 </html>
