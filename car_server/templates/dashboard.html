@@ -3,7 +3,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+            {% setup_hotkeys %}
     </head>
     <body>
         <form method="POST" action="/go_foward/">
@@ -23,13 +26,13 @@
             <button name="back" value="back" type="submit">Back</button>
         </form>
 
-        <a><img alt="Image" height=150 width=150 src="{% static 'forward_left.jpeg' %}"></a>
-        <button name="foward" value="foward" type="submit"><img alt="Image" height=150 width=150 src="{% static 'forward.jpeg' %}"></button>
-        <img alt="Image" height=150 width=150 src="{% static 'forward_right.jpeg' %}">
+        <button class="btn btn-outline-primary" name="foward_left" value="foward_left" type="submit"><img alt="Image" height=150 width=150 src="{% static 'forward_left.jpeg' %}"></button>
+        <button class="btn btn-outline-primary" name="foward" value="foward" type="submit"><img alt="Image" height=150 width=150 src="{% static 'forward.jpeg' %}"></button>
+        <button class="btn btn-outline-primary" name="forward_right" value="forward_right" type="submit"><img alt="Image" height=150 width=150 src="{% static 'forward_right.jpeg' %}"></button>
         <br>
-        <img alt="Image" height=150 width=150 src="{% static 'reverse_left.jpeg' %}">
-        <img alt="Image" height=150 width=150 src="{% static 'reverse.jpeg' %}">
-        <img alt="Image" height=150 width=150 src="{% static 'reverse_right.jpeg' %}">
+        <button class="btn btn-outline-primary" name="reverse_left" value="reverse_left" type="submit"><img alt="Image" height=150 width=150 src="{% static 'reverse_left.jpeg' %}"></button>
+        <button class="btn btn-outline-primary" name="reverse" value="reverse" type="submit"><img alt="Image" height=150 width=150 src="{% static 'reverse.jpeg' %}"></button>
+        <button class="btn btn-outline-primary" name="reverse_right" value="reverse_right" type="submit"><img alt="Image" height=150 width=150 src="{% static 'reverse_right.jpeg' %}"></button>
     </body>
 
     <script>
