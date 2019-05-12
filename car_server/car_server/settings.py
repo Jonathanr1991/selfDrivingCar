@@ -128,11 +128,3 @@ STATICFILES_DIRS= (
 
     os.path.join(BASE_DIR, 'static'),
 )
-
-# START keyboard_shortcuts settings #
-HOTKEYS = [
-            {'keys': 'g + h',  # go home
-            'link': '/'},
-        ]
-SPECIAL_DISABLED = True
-# END keyboard_shortcuts settings #

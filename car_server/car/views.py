@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from car import Corvette
 from django.views.generic import TemplateView
 from  django.http import HttpResponse
-from car import testcam
+
 
 
 
@@ -10,8 +10,6 @@ class Controller():
    
 
     def home_view(request, *args, **kwargs):
-        #camera= testcam.cam()
-        #camera.start()
         return render(request,'dashboard.html', {})
 
     def go_foward(request):
