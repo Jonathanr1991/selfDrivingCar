@@ -10,8 +10,8 @@ class Controller():
    
 
     def home_view(request, *args, **kwargs):
-        camera= testcam.cam()
-        camera.start()
+        #camera= testcam.cam()
+        #camera.start()
         return render(request,'dashboard.html', {})
 
     def go_foward(request):
