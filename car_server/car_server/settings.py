@@ -41,8 +41,7 @@ INSTALLED_APPS = [
     'car_server',
     #'keyboard_shortcuts',
 
-    # Added.
-    'keyboard_shortcuts',
+ 
 ]
 
 MIDDLEWARE = [
