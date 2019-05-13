@@ -18,7 +18,7 @@ class Controller():
             car.forward()
         return render(request, 'dashboard.html',{})
 
-    def go_back(request):
+    def go_reverse(request):
         car = Corvette.CorvetteController()
         direction = request.POST.get('back')
         print(direction)
