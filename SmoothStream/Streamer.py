@@ -34,14 +34,14 @@ class Streamer:
         camera = Camera()
         camera.start_capture()
         self.keep_running = True
-        stop_cascade = cv.CascadeClassifier('stop_sign.xml')
+        stop_cascade = cv2.CascadeClassifier('stop_sign.xml')
         while self.footage_socket and self.keep_running:
             try:
                 frame = camera.current_frame.read()  # grab the current frame
-                img = cv.imread(frame)
-                gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+                img = cv2.imread(frame)
+                gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
                 stop = stop_cascade.detectMultiScale(gray, 1.3, 5)
-                cv.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
+                cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
                 roi_gray = gray[y:y+h, x:x+w]
                 roi_color = img[y:y+h, x:x+w]
                 image_as_string = image_to_string(img)
