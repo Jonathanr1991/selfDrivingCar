@@ -9,7 +9,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
           
     <body>
-        <div style="display: inline-block;">
+        <div style="display: inline;">
             <form method="POST" action="/go_forward_left/">
             {%csrf_token %}
                 <button class="btn btn-outline-primary" name="forward_left" value="fowrard_left" type="submit"><img alt="Image" height=150 width=150 src="{% static 'forward_left.jpeg' %}"></button>
