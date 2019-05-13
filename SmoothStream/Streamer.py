@@ -41,9 +41,10 @@ class Streamer:
                 #img = cv2.imread(frame)
                 gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
                 stop = stop_cascade.detectMultiScale(gray, 1.3, 5)
-                cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),2)
-                roi_gray = gray[y:y+h, x:x+w]
-                roi_color = frame[y:y+h, x:x+w]
+                for (x,y,w,h) in faces:
+                    cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),2)
+                    roi_gray = gray[y:y+h, x:x+w]
+                    roi_color = frame[y:y+h, x:x+w]
                 image_as_string = image_to_string(frame)
                 self.footage_socket.send(image_as_string)
 
