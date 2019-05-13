@@ -9,7 +9,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
           
     <body>
-        <div class="row">
+        <div style="display: inline-block;">
             <form method="POST" action="/go_forward_left/"></form>
             {%csrf_token %}
                 <button class="btn btn-outline-primary" name="forward_left" value="fowrard_left" type="submit"><img alt="Image" height=150 width=150 src="{% static 'forward_left.jpeg' %}"></button>
@@ -23,7 +23,7 @@
                 <button class="btn btn-outline-primary" name="forward_right" value="forward_right" type="submit"><img alt="Image" height=150 width=150 src="{% static 'forward_right.jpeg' %}"></button>
             </form>
         </div>
-        <div class="row"> 
+        <div style="display: inline-block;"> 
                 <form method="POST" action="/go_reverse_left/">        
                     {%csrf_token %}
                     <button class="btn btn-outline-primary" name="reverse_left" value="reverse_left" type="submit"><img alt="Image" height=150 width=150 src="{% static 'reverse_left.jpeg' %}"></button>
