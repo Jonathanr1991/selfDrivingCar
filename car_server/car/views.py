@@ -16,6 +16,7 @@ class Controller():
         print(direction)
         if direction=='forward':
             car.forward()
+            car.release()
         return render(request, 'dashboard.html',{})
 
     def go_reverse(request):
@@ -24,6 +25,7 @@ class Controller():
         print(direction)
         if direction=="reverse":
             car.reverse()
+            car.release()
         return render(request, 'dashboard.html',{})
         
     def go_reverse_right(request):
@@ -32,6 +34,7 @@ class Controller():
         print(direction)
         if direction=="reverse_right":
             car.reverse_right()
+            car.release()
         return render(request, 'dashboard.html',{})
     
     def go_reverse_left(request):
@@ -40,6 +43,7 @@ class Controller():
         print(direction)
         if direction=="reverse_left":
             car.reverse_left()
+            car.release()
         return render(request, 'dashboard.html',{})
 
     def go_forward_right(request):
@@ -48,6 +52,7 @@ class Controller():
         print(direction)
         if direction=="forward_right":
             car.forward_right()
+            car.release()
         return render(request, 'dashboard.html',{})
     
     def go_forward_left(request):
@@ -56,6 +61,7 @@ class Controller():
         print(direction)
         if direction=="forward_left":
             car.forward_left()
+            car.release()
         return render(request, 'dashboard.html',{})
 
 
