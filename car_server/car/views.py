@@ -20,9 +20,9 @@ class Controller():
 
     def go_reverse(request):
         car = Corvette.CorvetteController()
-        direction = request.POST.get('back')
+        direction = request.POST.get('reverse')
         print(direction)
-        if direction=="back":
+        if direction=="reverse":
             car.reverse()
         return render(request, 'dashboard.html',{})
         
