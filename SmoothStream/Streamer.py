@@ -41,7 +41,7 @@ class Streamer:
                 #img = cv2.imread(frame)
                 gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
                 stop = stop_cascade.detectMultiScale(gray, 1.3, 5)
-                for (x,y,w,h) in faces:
+                for (x,y,w,h) in stop:
                     cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),2)
                     roi_gray = gray[y:y+h, x:x+w]
                     roi_color = frame[y:y+h, x:x+w]
