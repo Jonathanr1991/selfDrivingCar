@@ -28,13 +28,13 @@ class CorvetteController():
         GPIO.output(self.Motor2F,GPIO.HIGH)
         GPIO.output(self.Motor2B,GPIO.LOW)
         GPIO.output(self.Motor2E,GPIO.HIGH)
-        sleep(1)
+        sleep(0.5)
 
     def reverse(self):
         GPIO.output(self.Motor2F,GPIO.LOW)
         GPIO.output(self.Motor2B,GPIO.HIGH)
         GPIO.output(self.Motor2E,GPIO.HIGH)
-        sleep(1)
+        sleep(0.5)
 
     def forward_right(self):
         GPIO.output(self.Motor1F,GPIO.LOW)
@@ -43,7 +43,7 @@ class CorvetteController():
         GPIO.output(self.Motor2F,GPIO.HIGH)
         GPIO.output(self.Motor2B,GPIO.LOW)
         GPIO.output(self.Motor2E,GPIO.HIGH)
-        sleep(1)
+        sleep(0.5)
 
 
     def forward_left(self):
@@ -53,7 +53,7 @@ class CorvetteController():
         GPIO.output(self.Motor2F,GPIO.HIGH)
         GPIO.output(self.Motor2B,GPIO.LOW)
         GPIO.output(self.Motor2E,GPIO.HIGH)
-        sleep(1)
+        sleep(0.5)
 
 
     def reverse_right(self):
@@ -63,7 +63,7 @@ class CorvetteController():
         GPIO.output(self.Motor2F,GPIO.LOW)
         GPIO.output(self.Motor2B,GPIO.HIGH)
         GPIO.output(self.Motor2E,GPIO.HIGH)
-        sleep(1)
+        sleep(0.5)
 
     def reverse_left(self):
         GPIO.output(self.Motor1F,GPIO.HIGH)
@@ -72,7 +72,7 @@ class CorvetteController():
         GPIO.output(self.Motor2F,GPIO.LOW)
         GPIO.output(self.Motor2B,GPIO.HIGH)
         GPIO.output(self.Motor2E,GPIO.HIGH)
-        sleep(1)
+        sleep(0.5)
 
 
     def release(self):
