@@ -34,15 +34,26 @@ class CorvetteController():
         GPIO.output(self.Motor2B,GPIO.HIGH)
         GPIO.output(self.Motor2E,GPIO.HIGH)
 
-    def right(self):
+    def forward_right(self):
         GPIO.output(self.Motor1F,GPIO.LOW)
         GPIO.output(self.Motor1B,GPIO.HIGH)
         GPIO.output(self.Motor1E,GPIO.HIGH)
 
-    def left(self):
+    def forward_left(self):
         GPIO.output(self.Motor1F,GPIO.HIGH)
         GPIO.output(self.Motor1B,GPIO.LOW)
         GPIO.output(self.Motor1E,GPIO.HIGH)
+
+    def reverse_right(self):
+        GPIO.output(self.Motor1F,GPIO.LOW)
+        GPIO.output(self.Motor1B,GPIO.HIGH)
+        GPIO.output(self.Motor1E,GPIO.HIGH)
+
+    def reverse_left(self):
+        GPIO.output(self.Motor1F,GPIO.HIGH)
+        GPIO.output(self.Motor1B,GPIO.LOW)
+        GPIO.output(self.Motor1E,GPIO.HIGH)
+
 
     def release(self):
         GPIO.output(self.Motor1E, GPIO.LOW)

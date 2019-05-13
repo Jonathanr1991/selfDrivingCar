@@ -9,28 +9,28 @@
           
     <body>
         
-        <form method="POST" action="/foward_left/"></form>
+        <form method="POST" action="/go_foward_left/"></form>
         {%csrf_token %}
             <button class="btn btn-outline-primary" name="foward_left" value="foward_left" type="submit"><img alt="Image" height=150 width=150 src="{% static 'forward_left.jpeg' %}"></button>
         </form>
-        <form method="POST" action="/foward/">    
+        <form method="POST" action="/go_foward/">    
             {%csrf_token %}
             <button class="btn btn-outline-primary" name="foward" value="foward" type="submit"><img alt="Image" height=150 width=150 src="{% static 'forward.jpeg' %}"></button>
         </form>
-        <form method="POST" action="/forward_right/">   
+        <form method="POST" action="/go_forward_right/">   
             {%csrf_token %} 
             <button class="btn btn-outline-primary" name="forward_right" value="forward_right" type="submit"><img alt="Image" height=150 width=150 src="{% static 'forward_right.jpeg' %}"></button>
             <br>
         </form>
-        <form method="POST" action="/reverse_left/">        
+        <form method="POST" action="/go_reverse_left/">        
             {%csrf_token %}
             <button class="btn btn-outline-primary" name="reverse_left" value="reverse_left" type="submit"><img alt="Image" height=150 width=150 src="{% static 'reverse_left.jpeg' %}"></button>
         </form>
-        <form method="POST" action="/reverse/">  
+        <form method="POST" action="/go_reverse/">  
             {%csrf_token %}  
             <button class="btn btn-outline-primary" name="reverse" value="reverse" type="submit"><img alt="Image" height=150 width=150 src="{% static 'reverse.jpeg' %}"></button>
         </form>
-        <form method="POST" action="/reverse_right/">   
+        <form method="POST" action="/go_reverse_right/">   
             {%csrf_token %}  
             <button class="btn btn-outline-primary" name="reverse_right" value="reverse_right" type="submit"><img alt="Image" height=150 width=150 src="{% static 'reverse_right.jpeg' %}"></button>
         </form>
