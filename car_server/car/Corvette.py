@@ -78,5 +78,7 @@ class CorvetteController():
     def release(self):
         GPIO.output(self.Motor1E, GPIO.LOW)
         GPIO.output(self.Motor2E, GPIO.LOW)
+        GPIO.output(self.Motor1B,GPIO.LOW)
+        GPIO.output(self.Motor2B,GPIO.LOW)
 
 
