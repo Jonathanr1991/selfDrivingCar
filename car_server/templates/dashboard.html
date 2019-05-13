@@ -9,30 +9,30 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
           
     <body>
-        <div style="display: inline;">
-            <form method="POST" action="/go_forward_left/">
+        <div >
+            <form style="display: inline-block;"method="POST" action="/go_forward_left/">
             {%csrf_token %}
                 <button class="btn btn-outline-primary" name="forward_left" value="fowrard_left" type="submit"><img alt="Image" height=150 width=150 src="{% static 'forward_left.jpeg' %}"></button>
             </form>
-            <form method="POST" action="/go_forward/">    
+            <form style="display: inline-block;"method="POST" action="/go_forward/">    
                 {%csrf_token %}
                 <button class="btn btn-outline-primary" name="forward" value="forward" type="submit"><img alt="Image" height=150 width=150 src="{% static 'forward.jpeg' %}"></button>
             </form>
-            <form method="POST" action="/go_forward_right/">   
+            <formstyle="display: inline-block;" method="POST" action="/go_forward_right/">   
                 {%csrf_token %} 
                 <button class="btn btn-outline-primary" name="forward_right" value="forward_right" type="submit"><img alt="Image" height=150 width=150 src="{% static 'forward_right.jpeg' %}"></button>
             </form>
         </div>
-        <div style="display: inline-block;"> 
-                <form method="POST" action="/go_reverse_left/">        
+        <div > 
+                <form style="display: inline-block;" method="POST" action="/go_reverse_left/">        
                     {%csrf_token %}
                     <button class="btn btn-outline-primary" name="reverse_left" value="reverse_left" type="submit"><img alt="Image" height=150 width=150 src="{% static 'reverse_left.jpeg' %}"></button>
                 </form>
-                <form method="POST" action="/go_reverse/">  
+                <form style="display: inline-block;"method="POST" action="/go_reverse/">  
                     {%csrf_token %}  
                     <button class="btn btn-outline-primary" name="reverse" value="reverse" type="submit"><img alt="Image" height=150 width=150 src="{% static 'reverse.jpeg' %}"></button>
                 </form>
-                <form method="POST" action="/go_reverse_right/">   
+                <form style="display: inline-block;"method="POST" action="/go_reverse_right/">   
                     {%csrf_token %}  
                     <button class="btn btn-outline-primary" name="reverse_right" value="reverse_right" type="submit"><img alt="Image" height=150 width=150 src="{% static 'reverse_right.jpeg' %}"></button>
                 </form>
