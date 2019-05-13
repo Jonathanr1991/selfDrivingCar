@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from car import Corvette
 from django.views.generic import TemplateView
 from  django.http import HttpResponse
+from time import sleep
 
 
 class Controller():
@@ -16,6 +17,7 @@ class Controller():
         print(direction)
         if direction=='forward':
             car.forward()
+            sleep(0.5)
             car.release()
         return render(request, 'dashboard.html',{})
 
@@ -25,6 +27,7 @@ class Controller():
         print(direction)
         if direction=="reverse":
             car.reverse()
+            sleep(0.5)
             car.release()
         return render(request, 'dashboard.html',{})
         
@@ -34,6 +37,7 @@ class Controller():
         print(direction)
         if direction=="reverse_right":
             car.reverse_right()
+            sleep(0.5)
             car.release()
         return render(request, 'dashboard.html',{})
     
@@ -43,6 +47,7 @@ class Controller():
         print(direction)
         if direction=="reverse_left":
             car.reverse_left()
+            sleep(0.5)
             car.release()
         return render(request, 'dashboard.html',{})
 
@@ -52,6 +57,7 @@ class Controller():
         print(direction)
         if direction=="forward_right":
             car.forward_right()
+            sleep(0.5)
             car.release()
         return render(request, 'dashboard.html',{})
     
@@ -61,6 +67,7 @@ class Controller():
         print(direction)
         if direction=="forward_left":
             car.forward_left()
+            sleep(0.5)
             car.release()
         return render(request, 'dashboard.html',{})
 
