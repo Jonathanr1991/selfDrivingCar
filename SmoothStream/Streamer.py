@@ -38,13 +38,13 @@ class Streamer:
         while self.footage_socket and self.keep_running:
             try:
                 frame = camera.current_frame.read()  # grab the current frame
-                img = cv2.imread(frame)
-                gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+                #img = cv2.imread(frame)
+                gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
                 stop = stop_cascade.detectMultiScale(gray, 1.3, 5)
-                cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
+                cv2.rectangle(frame,(x,y),(x+w,y+h),(255,0,0),2)
                 roi_gray = gray[y:y+h, x:x+w]
-                roi_color = img[y:y+h, x:x+w]
-                image_as_string = image_to_string(img)
+                roi_color = frame[y:y+h, x:x+w]
+                image_as_string = image_to_string(frame)
                 self.footage_socket.send(image_as_string)
 
             except KeyboardInterrupt:
