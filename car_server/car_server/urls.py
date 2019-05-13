@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^go_foward/$', views.Controller.go_foward, name='go_foward'),
     url(r'^go_back/$', views.Controller.go_back, name='go_back'),
-    url(r'^go_right/$', views.Controller.go_right, name='go_right'),
-    url(r'^go_left/$', views.Controller.go_left, name='go_left'),
+    url(r'^go_forward_right/$', views.Controller.go_forward_right, name='go_forward_right'),
+    url(r'^go_forward_left/$', views.Controller.go_forward_left, name='go_forward_left'),
+    url(r'^go_reverse_right/$', views.Controller.go_reverse_right, name='go_reverse_right'),
+    url(r'^go_reverse_left/$', views.Controller.go_reverse_left, name='go_reverse_left'),
 ]

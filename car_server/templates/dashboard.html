@@ -8,32 +8,33 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
           
     <body>
-        <form method="POST" action="/go_foward/">
-            {%csrf_token %}
-            <button name="foward" value="foward" type="submit">Foward</button>
-        </form>
-        <form method="POST" action="/go_right/">
-                {%csrf_token %}
-            <button name="right" value="right" type="submit">Right</button>
-        </form>
-        <form method="POST" action="/go_left/">
-                {%csrf_token %}
-            <button name="left" value="left" type="submit">Left</button>
-        </form>
-        <form method="POST" action="/go_back/">
-                {%csrf_token %}
-            <button name="back" value="back" type="submit">Back</button>
-        </form>
-
-        <button class="btn btn-outline-primary" name="foward_left" value="foward_left" type="submit"><img alt="Image" height=150 width=150 src="{% static 'forward_left.jpeg' %}"></button>
-        <button class="btn btn-outline-primary" name="foward" value="foward" type="submit"><img alt="Image" height=150 width=150 src="{% static 'forward.jpeg' %}"></button>
-        <button class="btn btn-outline-primary" name="forward_right" value="forward_right" type="submit"><img alt="Image" height=150 width=150 src="{% static 'forward_right.jpeg' %}"></button>
-        <br>
-        <button class="btn btn-outline-primary" name="reverse_left" value="reverse_left" type="submit"><img alt="Image" height=150 width=150 src="{% static 'reverse_left.jpeg' %}"></button>
-        <button class="btn btn-outline-primary" name="reverse" value="reverse" type="submit"><img alt="Image" height=150 width=150 src="{% static 'reverse.jpeg' %}"></button>
-        <button class="btn btn-outline-primary" name="reverse_right" value="reverse_right" type="submit"><img alt="Image" height=150 width=150 src="{% static 'reverse_right.jpeg' %}"></button>
         
-        <canvas id="canvasOutput"></canvas>
+        <form method="POST" action="/foward_left/"></form>
+        {%csrf_token %}
+            <button class="btn btn-outline-primary" name="foward_left" value="foward_left" type="submit"><img alt="Image" height=150 width=150 src="{% static 'forward_left.jpeg' %}"></button>
+        </form>
+        <form method="POST" action="/foward/">    
+            {%csrf_token %}
+            <button class="btn btn-outline-primary" name="foward" value="foward" type="submit"><img alt="Image" height=150 width=150 src="{% static 'forward.jpeg' %}"></button>
+        </form>
+        <form method="POST" action="/forward_right/">   
+            {%csrf_token %} 
+            <button class="btn btn-outline-primary" name="forward_right" value="forward_right" type="submit"><img alt="Image" height=150 width=150 src="{% static 'forward_right.jpeg' %}"></button>
+            <br>
+        </form>
+        <form method="POST" action="/reverse_left/">        
+            {%csrf_token %}
+            <button class="btn btn-outline-primary" name="reverse_left" value="reverse_left" type="submit"><img alt="Image" height=150 width=150 src="{% static 'reverse_left.jpeg' %}"></button>
+        </form>
+        <form method="POST" action="/reverse/">  
+            {%csrf_token %}  
+            <button class="btn btn-outline-primary" name="reverse" value="reverse" type="submit"><img alt="Image" height=150 width=150 src="{% static 'reverse.jpeg' %}"></button>
+        </form>
+        <form method="POST" action="/reverse_right/">   
+            {%csrf_token %}  
+            <button class="btn btn-outline-primary" name="reverse_right" value="reverse_right" type="submit"><img alt="Image" height=150 width=150 src="{% static 'reverse_right.jpeg' %}"></button>
+        </form>
+    
    
     </body>
 

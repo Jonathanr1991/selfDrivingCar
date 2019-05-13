@@ -4,19 +4,17 @@ from django.views.generic import TemplateView
 from  django.http import HttpResponse
 
 
-
-
 class Controller():
    
 
     def home_view(request, *args, **kwargs):
         return render(request,'dashboard.html', {})
 
-    def go_foward(request):
+    def go_forward(request):
         car = Corvette.CorvetteController()
-        direction = request.POST.get('foward')
+        direction = request.POST.get('forward')
         print(direction)
-        if direction=='foward':
+        if direction=='forward':
             car.forward()
         return render(request, 'dashboard.html',{})
 
@@ -28,19 +26,36 @@ class Controller():
             car.reverse()
         return render(request, 'dashboard.html',{})
         
-    def go_right(request):
+    def go_reverse_right(request):
         car = Corvette.CorvetteController()
-        direction = request.POST.get('right')
+        direction = request.POST.get('reverse_right')
         print(direction)
-        if direction=="right":
-            car.right()
+        if direction=="reverse_right":
+            car.reverse_right()
         return render(request, 'dashboard.html',{})
     
-    def go_left(request):
+    def go_reverse_left(request):
         car = Corvette.CorvetteController()
-        direction = request.POST.get('left')
+        direction = request.POST.get('reverse_left')
         print(direction)
-        if direction=="left":
-            car.left()
+        if direction=="reverse_left":
+            car.reverse_left()
         return render(request, 'dashboard.html',{})
+
+    def go_forward_right(request):
+        car = Corvette.CorvetteController()
+        direction = request.POST.get('forward_right')
+        print(direction)
+        if direction=="forward_right":
+            car.forward_right()
+        return render(request, 'dashboard.html',{})
+    
+    def go_forward_left(request):
+        car = Corvette.CorvetteController()
+        direction = request.POST.get('forward_left')
+        print(direction)
+        if direction=="forward_left":
+            car.forward_left()
+        return render(request, 'dashboard.html',{})
+
 
